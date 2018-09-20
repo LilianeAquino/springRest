@@ -1,0 +1,17 @@
+buildscript {
+	repositories {
+		jcenter()
+	    maven {
+     		 url "https://plugins.gradle.org/m2/"
+		}
+	}
+	dependencies {
+	    classpath "com.moowork.gradle:gradle-node-plugin:0.12"
+	}
+}
+
+apply plugin: 'com.moowork.node'
+
+task webpack(type: NodeTask, dependsOn: 'npmInstall') {
+  script = project.file('/home/liliane/Documents/workspace-sts-3.9.5.RELEASE/com.vogella.spring.rest/node_modules/webpack/bin/webpack.js')
+}
